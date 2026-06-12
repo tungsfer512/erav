@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+files/
+html/
+.claude/
+.vscode/
+.git/
+*.html

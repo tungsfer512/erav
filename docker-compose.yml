@@ -1,0 +1,14 @@
+services:
+  download-files:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: erav-download-files
+    container_name: erav-download-files
+    working_dir: /app
+    volumes:
+      # Mount input/output ra host để dữ liệu tải về được giữ lại
+      - ./details.json:/app/erav/details.json:ro
+      - ./files:/app/erav/files
+      - ./progress.log:/app/erav/progress.log
+    command: ["python", "erav/download_files.py"]
